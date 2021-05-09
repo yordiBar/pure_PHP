@@ -36,8 +36,7 @@ if (isset($_SESSION['user_is_admin'])) {
                         <li class="<?= $mapLinkClass ?>"><a href="index.php?action=sitemap" >Sitemap</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="<?= $loginLinkClass ?>"><a href="index.php?action=login" > Login</a></li>
-                        <li class="<?= $registerLinkClass ?>"><a href="index.php?action=register" > Register</a></li>
+                        
                         <?php
                         
                         //show admin options button if user with admin rights
@@ -47,6 +46,10 @@ if (isset($_SESSION['user_is_admin'])) {
                         //show logout button if a user is logged in
                         if (isset($user_id)) {
                             echo '<li class="<?= $adminLinkClass ?>"><a href="index.php?action=logout" > Logout</a></li>';
+                        } else
+                        {
+                            echo '<li class="<?= $loginLinkClass ?>"><a href="index.php?action=login" > Login</a></li>';
+                            echo '<li class="<?= $registerLinkClass ?>"><a href="index.php?action=register" > Register</a></li>';
                         }
                         ?>
                     </ul>
